@@ -1,8 +1,9 @@
-var a = parseInt(prompt("nhap a :"));
+var a = parseInt(prompt("nhap a :")); //nhập giá trị cho biến a từ bàn phím
 
-var b = parseInt(prompt("nhap b :"));
-var c = parseInt(prompt("nhap c :"));
-document.write("a=" + a + "<br>" + "b=" + b + "<br>" + "c=" + c);
+var b = parseInt(prompt("nhap b :")); //nhập giá trị cho biến b từ bàn phím
+var c = parseInt(prompt("nhap c :")); //nhập giá trị cho biến c từ bàn phím
+document.write("a=" + a + "<br>" + "b=" + b + "<br>" + "c=" + c); //Hiển thị giá trị của biến a, b và c trên trang web
+//// Kiểm tra giá trị của biến
 if (a == 0) {
   if (b == 0) {
     if (c == 0) {
@@ -32,3 +33,4 @@ if (a == 0) {
     );
   }
 }
+// document.write in ra dòng lệnh
