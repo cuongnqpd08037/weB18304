@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // tao mang
+      let mang = ["Tue", "Thu", "Sat", "Nine"];
+
+      // them phan tu
+      mang.splice(0, 0, "Mon");
+      mang.splice(2, 0, "We");
+      mang.splice(4, 0, "Tri");
+      mang.splice(6, 1, "Sun"); // xóa phần tử nine
+      console.log(mang); // lenh in
+      // in ra man hinh
+
+      document.write("mảng sau khi thêm và xóa : " + mang);
+    </script>
+  </body>
+</html>
