@@ -1,6 +1,5 @@
 function tinhDiemTrungBinhIfElse() {
   let toan = parseFloat(prompt("Nhap diem Toan: "));
-
   let ly = parseFloat(prompt("Nhap diem Ly: "));
   let hoa = parseFloat(prompt("Nhap diem Hoa: "));
   let sinh = parseFloat(prompt("Nhap diem Sinh: "));
