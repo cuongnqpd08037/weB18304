@@ -4,9 +4,10 @@ let opt;
 
 function buttonHandler(btn) {
   const pressedValue = btn.innerText;
-  const resultInput = document.getElementById("resultInput");
+  const resultInput = document.getElementById("resultInput"); // in ra khung tính trên màn hình
 
   if (isNaN(pressedValue)) {
+    // kiểm tra xem giá trị nhập vào có phải số không
     if (pressedValue == "AC") {
       operand1 = "";
       operand2 = "";
