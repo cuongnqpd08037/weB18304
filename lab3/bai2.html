@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="bai2.css">
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        width: 400px;
+        margin: 50px auto;
+      }
+      .container {
+        width: 400px;
+        height: 100%;
+        background-color: aqua;
+        border-radius: 0 0 8px 8px;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 100px 100px 100px 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <input id="ketqua" type="text" value="" />
+      <div class="container">
+        <input type="button" value="7" onclick="gan(this.value)" />
+        <input type="button" value="8" onclick="gan(this.value)" />
+        <input type="button" value="9" onclick="gan(this.value)" />
+        <input type="button" value="+" onclick="gan(this.value)" />
+        <input type="button" value="4" onclick="gan(this.value)" />
+        <input type="button" value="5" onclick="gan(this.value)" />
+        <input type="button" value="6" onclick="gan(this.value)" />
+        <input type="button" value="-" onclick="gan(this.value)" />
+        <input type="button" value="1" onclick="gan(this.value)" />
+        <input type="button" value="2" onclick="gan(this.value)" />
+        <input type="button" value="3" onclick="gan(this.value)" />
+        <input type="button" value="*" onclick="gan(this.value)" />
+        <input type="button" value="0" onclick="gan(this.value)" />
+        <input type="button" value="C" onclick="xoa()" />
+        <input type="button" value="=" onclick="result()" />
+        <input type="button" value="/" onclick="gan(this.value)" />
+      </div>
+    </div>
     <script src="bai2.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="title">Máy tính </div>
-        <div class="results">
-            <input type="text" id="resultInput" class="result">
-        </div>
-        <div class="buttons">
-            <button class="button" onclick="buttonHandler(this)">7</button>
-            <button class="button" onclick="buttonHandler(this)">8</button>
-            <button class="button" onclick="buttonHandler(this)">9</button>
-            <button class="button" onclick="buttonHandler(this)">+</button >
-        </div>
-        <div class="buttons">
-            <button class="button" onclick="buttonHandler(this)">4</button>
-            <button class="button" onclick="buttonHandler(this)">5</button>
-            <button class="button" onclick="buttonHandler(this)">6</button>
-            <button class="button" onclick="buttonHandler(this)">-</button>
-        </div>
-        <div class="buttons">
-            <button class="button" onclick="buttonHandler(this)">1</button >
-            <button class="button" onclick="buttonHandler(this)">2</button >
-            <button class="button" onclick="buttonHandler(this)">3</button >
-            <button class="button" onclick="buttonHandler(this)">*</button>
-        </div>
-        <div class="buttons">
-            <button class="button" onclick="buttonHandler(this)">0</button>
-            <button class="button" onclick="buttonHandler(this)">AC</button>
-            <button class="button" onclick="buttonHandler(this)">=</button >
-            <button class="button" onclick="buttonHandler(this)">/</button>
-        </div>
-    </div>
-    </div>
-
-</body>
-
+  </body>
 </html>

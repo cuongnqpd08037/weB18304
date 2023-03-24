@@ -1,52 +1,26 @@
-let operand1 = "";
-let operand2 = "";
-let opt;
-
-function buttonHandler(btn) {
-  const pressedValue = btn.innerText;
-  const resultInput = document.getElementById("resultInput"); // in ra khung tính trên màn hình
-
-  if (isNaN(pressedValue)) {
-    // kiểm tra xem giá trị nhập vào có phải số không
-    if (pressedValue == "AC") {
-      operand1 = "";
-      operand2 = "";
-      opt = undefined;
-      resultInput.value = "";
-      return;
-    }
-    if (pressedValue == "=") {
-      const result = perform(operand1, operand2, opt);
-      resultInput.value = result;
-      operand1 = "";
-      operand2 = "";
-      opt = undefined;
-    } else {
-      opt = pressedValue;
-    }
-  } else {
-    if (opt) {
-      operand2 += pressedValue;
-      resultInput.value = operand2;
-    } else {
-      operand1 += pressedValue;
-      resultInput.value = operand1;
-    }
-  }
+// Cho kết quả bằng chuỗi rỗng
+var number = "";
+// Get element của input có id = ketqua và gắn vào idResult
+var idResult = document.getElementById("ketqua");
+function gan(value) {
+  // Gắn number = value button
+  number += value;
+  // Gắn value của id ketqua bằng biến number
+  idResult.value = number;
 }
-
-function perform(orand1, orand2, otor) {
-  orand1 = Number(orand1);
-  orand2 = Number(orand2);
-
-  switch (otor) {
-    case "+":
-      return orand1 + orand2;
-    case "-":
-      return orand1 - orand2;
-    case "*":
-      return orand1 * orand2;
-    case "/":
-      return orand1 / orand2;
+function xoa() {
+  // Gắn biến number bằng 0
+  number = "0";
+  // Gắn value của id ketqua bằng number
+  idResult.value = number;
+}
+function result() {
+  // Nếu number bằng chuỗi rỗng hoặc bằng 0 thì thông báo "Vui lòng nhập phép tính"
+  if (number == "" || number == 0) {
+    alert("Vui lòng nhập phép tính");
   }
+  // Gắn value của ketqua bằng kết quả
+  idResult.value = eval(idResult.value);
+  // Gắn number bằng kết quả
+  number = idResult.value;
 }
