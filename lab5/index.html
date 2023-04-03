@@ -110,9 +110,11 @@
 
     <script>
       var mang = [];
+
       function kiemTra() {
         let nametask = document.getElementById("name1412").value;
         let motatask = document.getElementById("mota11").value;
+
         if (nametask.length > 1 && motatask.length > 2) {
           alert("tao task thanh cong");
 
@@ -130,20 +132,45 @@
           alert("nhap lai di troi oi ");
         }
       }
+
       function hi3() {
         let task_1 = "";
         mang.map(function (item, index) {
           console.log(item);
           task_1 += `<div class="task-list-item">
-              <span id="task-id">${index + 1}</span>
-              <span id="name-task">${item.name}</span>
-              <span id="des-task">${item.description}</span>
-              <button class="btn btn-detele">Delete</button>
-              <button class="btn btn-edit">Edit</button>
-          </div>`;
+        <span id="task-id">${index + 1}</span>
+        <input id="name-task" value="${item.name}" disabled />
+        <input id="des-task" value="${item.description}" disabled />
+        <button class="btn btn-detele">Delete</button>
+        <button class="btn btn-edit" id="btnEdit">Edit</button>
+    </div>`;
         });
+
         document.querySelector(".task-list-wrapper").innerHTML = task_1;
+
+        const btnEdits = document.querySelectorAll(".btn-edit");
+        btnEdits.forEach((btnEdit) => {
+          btnEdit.addEventListener("click", () => {
+            const name = btnEdit.parentElement.querySelector("#name-task");
+            const description =
+              btnEdit.parentElement.querySelector("#des-task");
+
+            name.disabled = !name.disabled;
+            description.disabled = !description.disabled;
+            btnEdit.innerHTML = name.disabled ? "Edit" : "Update";
+          });
+        });
+
+        const btnDeletes = document.querySelectorAll(".btn-detele");
+        btnDeletes.forEach((btnDelete, index) => {
+          btnDelete.addEventListener("click", () => {
+            mang.splice(index, 1);
+            hi3();
+          });
+        });
       }
     </script>
+
+    Regenerate response
   </body>
 </html>
