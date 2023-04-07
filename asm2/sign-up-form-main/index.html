@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign Up Form</title>
+  </head>
+  <body>
+    <div class="gradient"></div>
+    <div class="log-in-wrapper">
+      <div class="log-in">
+        <h2 class="log-in-title">Log in</h2>
+        <div class="input-box">
+          <span>Email</span>
+          <!-- <img
+            class="imgs"
+            width="16px"
+            height="16px"
+            src="./email.png"
+            alt="email"
+          /> -->
+          <input
+            id="email-ip"
+            type="email"
+            class="input"
+            placeholder="Enter Your Email..."
+          />
+          <span id="tt-em"></span>
+        </div>
+
+        <div class="input-box">
+          <span>Password</span>
+          <!-- <img
+            class="imgs"
+            width="16px"
+            height="16px"
+            src="./lock.png"
+            alt="password"
+          /> -->
+          <input
+            id="pass-ip"
+            type="password"
+            class="input"
+            placeholder="Enter Your Password..."
+          />
+          <span id="tt-pass"></span>
+        </div>
+        <a class="forgot" href="#">Forgot Password?</a>
+        <h3 class="log-in-with">Or Sign Up With</h3>
+        <div class="companies">
+          <div class="google">
+            <img
+              class="icon"
+              width="32px"
+              height="32px"
+              src="./search.png"
+              alt="google"
+            />
+          </div>
+          <div class="facebook">
+            <img
+              class="icon"
+              width="32px"
+              height="32px"
+              src="./facebook.png"
+              alt="facebook"
+            />
+          </div>
+        </div>
+        <button id="bt-dn" class="submit-btn" disabled>Submit</button>
+      </div>
+    </div>
+    <script>
+      /* kiểm tra tính hợp lệ của biểu thức nhập vào input */
+      var email_kt = document.getElementById("email-ip");
+      var pass_kt = document.getElementById("pass-ip");
+      var bt_dn = document.getElementById("bt-dn");
+      var span_em = document.getElementById("tt-em");
+      var span_pass = document.getElementById("tt-pass");
+
+      email_kt.addEventListener("input", kiemtra);
+      pass_kt.addEventListener("input", kiemtra2);
+
+      function kiemtra() {
+        var regex = /\S+@\S+\.\S+/;
+        var emai = email_kt.value;
+        if (regex.test(emai)) {
+          span_em.innerHTML = "Hợp lệ";
+        } else {
+          span_em.innerHTML = "Không hợp lệ";
+        }
+        kiemtra3();
+      }
+
+      function kiemtra2() {
+        const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        var passw = pass_kt.value;
+        if (regex.test(passw)) {
+          span_pass.innerHTML = "Hợp lệ";
+        } else {
+          span_pass.innerHTML = "Không hợp lệ";
+        }
+        kiemtra3();
+      }
+
+      function kiemtra3() {
+        if (
+          span_em.innerHTML === "Hợp lệ" &&
+          span_pass.innerHTML === "Hợp lệ"
+        ) {
+          bt_dn.style.background =
+            "linear-gradient(334deg, #6b97f7, #7525e2, #f7137e)";
+          bt_dn.style.cursor = " pointer";
+          bt_dn.disabled = false;
+        } else {
+          bt_dn.style.background = "#4d4b4c";
+          bt_dn.disabled = true;
+          // bt_dn.style.cursor = " none";
+        }
+      }
+    </script>
+  </body>
+</html>
